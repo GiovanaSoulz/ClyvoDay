@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f9fc;
+    color: #333;
+}
+
+header {
+    background: white;
+    padding: 20px 50px;
+    box-shadow: 0 2px 12px rgba(38, 66, 101, 0.08);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #264265;
+}
+
+a {
+    color: inherit;
+}
+
+.voltar {
+    text-decoration: none;
+    color: #264265;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.voltar:hover {
+    opacity: 0.75;
+}
+
+.container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 0 25px;
+}
+
+.botao {
+    background: #264265;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao:hover {
+    background: #1d3552;
+    transform: translateY(-1px);
+}
+
+.card {
+    background: #b6d6fc;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(38, 66, 101, 0.10);
+}
+
+input,
+select,
+textarea {
+    font-family: Arial, sans-serif;
+}
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 18px 20px;
+    }
+
+    .container {
+        margin-top: 30px;
+        padding: 0 18px;
+    }
+}
+/* Botão de logout embutido no header (form sem estilo de form) */
+.logout-form {
+    display: inline;
+    margin: 0;
+}
+
+.logout-form button.voltar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+/* Mensagens de validação nos formulários */
+.erro {
+    display: block;
+    color: #c0392b;
+    font-size: 0.85em;
+    margin: 2px 0 8px;
+}
+
+/* Checkbox de "uso obrigatório" nos formulários */
+label.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+}
+
+label.checkbox input {
+    width: auto;
+}
+
+/* Selo de sequência de cuidados (streak / "foguinho") */
+.streak-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #fff4e5;
+    color: #d35400;
+    border-radius: 999px;
+    padding: 3px 10px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.btn-excluir {
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}

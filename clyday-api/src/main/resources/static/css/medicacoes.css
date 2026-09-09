@@ -1,0 +1,62 @@
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.topo h2 {
+    margin: 0;
+    color: #264265;
+}
+
+.topo p {
+    color: #667085;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #b6d6fc;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #264265;
+}
+
+.info {
+    margin: 10px 0;
+    color: #40536a;
+}
+
+.info strong {
+    color: #264265;
+}
+
+.vazio {
+    background: #b6d6fc;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px;
+    color: #264265;
+}
+
+@media (max-width: 650px) {
+
+    .topo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .topo .btn {
+        width: 100%;
+        text-align: center;
+    }
+}

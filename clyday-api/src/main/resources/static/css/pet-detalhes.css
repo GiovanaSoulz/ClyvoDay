@@ -1,0 +1,62 @@
+.container {
+    max-width: 700px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+}
+
+.pet-icon {
+    font-size: 70px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #264265;
+}
+
+.informacao {
+    padding: 15px;
+    margin-top: 10px;
+    background: #b6d6fc;
+    border-radius: 8px;
+    color: #264265;
+}
+
+.botoes {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.botao {
+    flex: 1;
+    text-align: center;
+}
+
+.secundario {
+    background: #eef6ff;
+    color: #264265;
+}
+
+.secundario:hover {
+    background: #dcecff;
+}
+
+.excluir {
+    background: #b00020;
+}
+
+.excluir:hover {
+    background: #8f001a;
+}
+
+@media (max-width: 650px) {
+
+    .botoes {
+        flex-direction: column;
+    }
+}

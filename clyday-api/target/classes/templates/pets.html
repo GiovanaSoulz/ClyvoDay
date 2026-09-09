@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ClyvoDay - Meus Pets</title>
+
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/pets.css}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>
+        🐾 ClyvoDay
+    </h1>
+
+    <a
+            class="voltar"
+            href="/dashboard">
+
+        Dashboard
+
+    </a>
+
+    <form th:action="@{/logout}" method="post" class="logout-form">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        <button type="submit" class="voltar">Sair</button>
+    </form>
+
+</header>
+
+
+
+<div class="container">
+
+
+    <div class="topo">
+
+        <div class="titulo">
+
+            <h2>
+                🐶 Meus Pets
+            </h2>
+
+            <p>
+                Gerencie os seus companheiros no ClyvoDay
+            </p>
+
+        </div>
+
+
+        <a
+                class="botao"
+                href="/pets/novo">
+
+            + Cadastrar Pet
+
+        </a>
+
+    </div>
+
+
+
+    <div class="lista">
+
+
+        <div
+                class="card"
+                th:each="pet : ${pets}">
+
+
+            <div class="pet-header">
+
+                <div class="pet-icone">
+
+                    🐾
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+
+                        <span th:text="${pet.nome}">
+                            Nome do Pet
+                        </span>
+
+                    </h3>
+
+                    <span
+                            th:text="${pet.especie}">
+
+                        Cachorro
+
+                    </span>
+
+                    <div class="streak-badge" th:if="${streaks != null and streaks.get(pet.id) != null and streaks.get(pet.id) > 0}">
+                        🔥 <span th:text="${streaks.get(pet.id)}">1</span> dia(s)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="info">
+
+                <p>
+
+                    <strong>
+                        Espécie:
+                    </strong>
+
+                    <span
+                            th:text="${pet.especie}">
+
+                        Cachorro
+
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+                        Tutor:
+                    </strong>
+
+                    <span
+                            th:text="${pet.tutor.nome}">
+
+                        Nome do Tutor
+
+                    </span>
+
+                </p>
+
+            </div>
+
+
+
+            <div class="acoes">
+
+                <a
+                        class="acao"
+                        th:href="@{/pets/{id}(id=${pet.id})}">
+
+                    Ver detalhes
+
+                </a>
+
+                <a
+                        class="acao"
+                        th:href="@{/atividades/nova(petId=${pet.id})}">
+
+                    + Atividade
+
+                </a>
+
+
+                <a
+                        class="acao"
+                        th:href="@{/atividades/pet/{id}/view(id=${pet.id})}">
+
+                    Ver atividades
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

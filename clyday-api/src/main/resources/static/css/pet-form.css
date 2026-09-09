@@ -1,0 +1,95 @@
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 520px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(38, 66, 101, 0.10);
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo .icone {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.titulo h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #264265;
+}
+
+.titulo p {
+    margin-top: 8px;
+    color: #667085;
+    font-size: 14px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #264265;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px 15px;
+
+    border: 1px solid #d5e2f0;
+    border-radius: 10px;
+
+    font-size: 15px;
+    background: white;
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #264265;
+    box-shadow: 0 0 0 3px rgba(38, 66, 101, 0.10);
+}
+
+select {
+    cursor: pointer;
+}
+
+.botao {
+    width: 100%;
+}
+
+.voltar {
+    display: block;
+    text-align: center;
+    margin-top: 18px;
+    color: #264265;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}

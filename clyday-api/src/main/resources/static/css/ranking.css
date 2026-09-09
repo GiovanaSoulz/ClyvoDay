@@ -1,0 +1,186 @@
+.container {
+    max-width: 900px;
+}
+
+.titulo h2 {
+    color: #264265;
+    margin-bottom: 8px;
+}
+
+.titulo p {
+    color: #52647a;
+    margin-top: 0;
+}
+
+.ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ranking-card {
+    background: white;
+    min-height: 90px;
+    padding: 18px 22px;
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.07);
+
+    border-left: 5px solid #264265;
+
+    transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+}
+
+.ranking-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+            0 7px 20px rgba(0, 0, 0, 0.10);
+}
+
+.posicao {
+    width: 45px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #264265;
+
+    text-align: center;
+}
+
+.pet-icone {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #b6d6fc;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+}
+
+.pet-info {
+    flex: 1;
+}
+
+.pet-info h3 {
+    margin: 0;
+
+    color: #264265;
+
+    font-size: 18px;
+}
+
+.pet-info p {
+    margin: 5px 0 0;
+
+    color: #52647a;
+
+    font-size: 14px;
+}
+
+.pontuacao {
+    min-width: 100px;
+
+    text-align: right;
+}
+
+.pontuacao strong {
+    display: block;
+
+    color: #264265;
+
+    font-size: 22px;
+}
+
+.pontuacao span {
+    color: #52647a;
+
+    font-size: 13px;
+}
+
+.vazio {
+    background: #b6d6fc;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    color: #264265;
+}
+
+.vazio h3 {
+    margin-top: 0;
+}
+
+.vazio a {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 11px 20px;
+
+    background: #264265;
+
+    color: white;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.vazio a:hover {
+    opacity: 0.85;
+}
+
+
+@media (max-width: 600px) {
+
+    .ranking-card {
+        padding: 15px;
+
+        gap: 10px;
+    }
+
+    .posicao {
+        width: 30px;
+
+        font-size: 20px;
+    }
+
+    .pet-icone {
+        width: 45px;
+        height: 45px;
+
+        font-size: 22px;
+    }
+
+    .pet-info h3 {
+        font-size: 16px;
+    }
+
+    .pontuacao {
+        min-width: 70px;
+    }
+
+    .pontuacao strong {
+        font-size: 18px;
+    }
+
+}

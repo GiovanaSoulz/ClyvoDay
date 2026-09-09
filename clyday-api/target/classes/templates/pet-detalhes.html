@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ClyvoDay - Detalhes do Pet</title>
+
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/pet-detalhes.css}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🐾 ClyvoDay</h1>
+
+    <a href="/pets" class="voltar">← Meus Pets</a>
+
+    <form th:action="@{/logout}" method="post" class="logout-form">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        <button type="submit" class="voltar">Sair</button>
+    </form>
+
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="pet-icon">
+            🐶
+        </div>
+
+        <h2
+                th:text="${pet.nome}">
+            Luna
+        </h2>
+
+        <div class="streak-badge" th:if="${streak != null and streak > 0}">
+            🔥 <span th:text="${streak}">3</span> dia(s) seguidos de cuidado
+        </div>
+        <div class="streak-badge" th:if="${streak == null or streak == 0}">
+            🐾 Registre um cuidado hoje para começar a sequência
+        </div>
+
+        <div class="informacao">
+
+            <strong>Nome:</strong>
+
+            <span th:text="${pet.nome}">
+                Luna
+            </span>
+
+        </div>
+
+        <div class="informacao">
+
+            <strong>Espécie:</strong>
+
+            <span th:text="${pet.especie}">
+                Cachorro
+            </span>
+
+        </div>
+
+        <div class="informacao">
+
+            <strong>Tutor:</strong>
+
+            <span th:text="${pet.tutor.nome}">
+                Tutor
+            </span>
+
+        </div>
+
+        <div class="botoes">
+
+            <a
+                    class="botao secundario"
+                    href="/pets">
+                ← Meus Pets
+            </a>
+
+            <a
+                    class="botao"
+                    th:href="@{/pets/{id}/editar(id=${pet.id})}">
+                ✏️ Editar
+            </a>
+
+            <form
+                    th:action="@{/pets/{id}/excluir(id=${pet.id})}"
+                    method="post"
+                    style="flex: 1;">
+
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+                <button
+                        type="submit"
+                        class="botao excluir"
+                        onclick="return confirm('Tem certeza que deseja excluir este pet?');">
+                    🗑️ Excluir
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

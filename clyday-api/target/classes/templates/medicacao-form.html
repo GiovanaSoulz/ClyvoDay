@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ClyvoDay - Cadastrar Medicação</title>
+
+    <link rel="stylesheet" th:href="@{/css/global.css}">
+    <link rel="stylesheet" th:href="@{/css/medicacao-form.css}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🐾 ClyvoDay</h1>
+
+</header>
+
+<div class="container">
+
+    <div class="form-card">
+
+        <h2>💊 Cadastrar Medicação</h2>
+
+        <p>
+            Cadastre o medicamento que seu pet precisa utilizar.
+        </p>
+
+        <form action="/medicacoes" th:object="${medicacaoDTO}" method="post">
+
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+
+            <label for="nome">
+                Nome do medicamento
+            </label>
+
+            <input
+                    type="text"
+                    id="nome"
+                    th:field="*{nome}"
+                    placeholder="Ex.: Amoxicilina"
+                    required
+            >
+            <span class="erro" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+
+            <label for="dosagem">
+                Dosagem
+            </label>
+
+            <input
+                    type="text"
+                    id="dosagem"
+                    th:field="*{dosagem}"
+                    placeholder="Ex.: 500 mg"
+                    required
+            >
+            <span class="erro" th:if="${#fields.hasErrors('dosagem')}" th:errors="*{dosagem}"></span>
+
+            <label for="horario">
+                Horário
+            </label>
+
+            <input
+                    type="time"
+                    id="horario"
+                    th:field="*{horario}"
+                    required
+            >
+            <span class="erro" th:if="${#fields.hasErrors('horario')}" th:errors="*{horario}"></span>
+
+            <label for="petId">
+                Pet
+            </label>
+
+            <select
+                    id="petId"
+                    th:field="*{petId}"
+                    required
+            >
+
+                <option value="">
+                    Selecione o pet
+                </option>
+
+                <option
+                        th:each="pet : ${pets}"
+                        th:value="${pet.id}"
+                        th:text="${pet.nome}">
+                    Pet
+                </option>
+
+            </select>
+            <span class="erro" th:if="${#fields.hasErrors('petId')}" th:errors="*{petId}"></span>
+
+            <label class="checkbox">
+                <input type="checkbox" th:field="*{obrigatoria}">
+                Uso obrigatório (não pode ser esquecido)
+            </label>
+
+            <button type="submit" class="btn">
+                Cadastrar medicação
+            </button>
+
+        </form>
+
+        <a href="/medicacoes" class="voltar">
+            ← Voltar para medicações
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

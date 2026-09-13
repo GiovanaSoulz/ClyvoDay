@@ -8,6 +8,8 @@ Em vez de enxergar o cuidado veterinário apenas como algo que acontece quando o
 
 Para incentivar a participação frequente, a aplicação usa **gamificação**: um sistema de pontuação e ranking premia a constância dos registros, incentivando o tutor a manter uma sequência de cuidados ao longo dos dias — sem transformar a saúde do pet em uma obrigação, mas em um hábito natural e prazeroso.
 
+-> LINK DO VIDEO: https://youtu.be/hU39HnWmzrI
+
 > Porque cuidar de um pet não acontece apenas quando ele precisa de um veterinário. Acontece todos os dias.
 
 ---

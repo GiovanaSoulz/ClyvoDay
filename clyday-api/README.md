@@ -99,7 +99,7 @@ Antes de começar, você precisa ter instalado:
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/SEU-USUARIO/clyday-api.git
+git clone https://github.com/GiovanaSoulz/clyday-api.git
 cd clyday-api
 ```
 
